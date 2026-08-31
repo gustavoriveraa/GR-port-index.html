@@ -1,0 +1,352 @@
+/* =========================
+   CONFIGURACIÓN GENERAL
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Montserrat", sans-serif;
+    background-color: #ffffff;
+    color: #1d2d3d;
+}
+
+.pagina {
+    width: 100%;
+    max-width: 1500px;
+    margin: auto;
+    padding: 20px 14px 12px 14px;
+}
+
+
+/* =========================
+   SECCIÓN SUPERIOR
+========================= */
+
+.seccion-superior {
+    display: grid;
+    grid-template-columns: 40% 60%;
+    min-height: 280px;
+}
+
+
+/* INTRODUCCIÓN */
+
+.introduccion {
+    padding-top: 0;
+    padding-right: 50px;
+}
+
+.introduccion h1 {
+    font-size: 26px;
+    line-height: 1.05;
+    font-weight: 700;
+    letter-spacing: 0.2px;
+}
+
+.linea-amarilla {
+    width: 28px;
+    height: 3px;
+
+    background-color: #d7e500;
+
+    margin-top: 18px;
+    margin-bottom: 14px;
+}
+
+.introduccion p {
+    width: 290px;
+
+    font-size: 9px;
+    line-height: 1.7;
+
+    color: #465360;
+
+    margin-bottom: 18px;
+}
+
+
+/* BOTONES */
+
+.boton {
+    display: inline-flex;
+
+    align-items: center;
+    gap: 10px;
+
+    padding: 7px 10px;
+
+    background-color: #fff000;
+
+    color: #172637;
+
+    font-size: 9px;
+    font-weight: 600;
+
+    text-decoration: none;
+
+    transition: 0.2s;
+}
+
+.boton:hover {
+    transform: translateY(-2px);
+    background-color: #e8dd00;
+}
+
+.boton span {
+    font-size: 13px;
+}
+
+
+/* =========================
+   SERVICIOS
+========================= */
+
+.servicios {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    column-gap: 80px;
+    row-gap: 35px;
+
+    padding-top: 20px;
+    padding-left: 10px;
+}
+
+.servicio {
+    position: relative;
+}
+
+.categoria {
+    display: block;
+
+    position: relative;
+
+    padding-left: 10px;
+
+    margin-bottom: 7px;
+
+    font-size: 8px;
+
+    color: #536270;
+}
+
+.categoria::before {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    top: 4px;
+
+    width: 3px;
+    height: 3px;
+
+    background-color: #254c70;
+}
+
+.servicio h2 {
+    font-size: 15px;
+
+    line-height: 1.2;
+
+    font-weight: 600;
+
+    letter-spacing: 0.3px;
+}
+
+
+/* =========================
+   SECCIÓN INFERIOR
+========================= */
+
+.seccion-inferior {
+    display: grid;
+
+    grid-template-columns: 42% 58%;
+
+    margin-top: 10px;
+
+    min-height: 325px;
+}
+
+
+/* =========================
+   TARJETA DEPORTES
+========================= */
+
+.tarjeta {
+    background-color: #38577e;
+
+    padding:
+        34px
+        27px
+        22px
+        27px;
+
+    color: white;
+}
+
+.categoria-blanca {
+    color: white;
+
+    font-size: 8px;
+
+    font-weight: 600;
+}
+
+.categoria-blanca::before {
+    background-color: white;
+}
+
+
+.linea {
+    width: 100%;
+    height: 1px;
+
+    background-color: rgba(255,255,255,0.25);
+
+    margin-top: 14px;
+    margin-bottom: 20px;
+}
+
+.tarjeta h2 {
+    font-size: 24px;
+
+    line-height: 1.2;
+
+    font-weight: 600;
+
+    margin-bottom: 12px;
+}
+
+.linea-corta {
+    width: 28px;
+    height: 3px;
+
+    background-color: #d8e4e9;
+
+    margin-bottom: 18px;
+}
+
+.tarjeta p {
+    max-width: 390px;
+
+    font-size: 9px;
+
+    line-height: 1.55;
+
+    font-weight: 500;
+
+    margin-bottom: 20px;
+}
+
+.boton-grande {
+    padding: 7px 10px;
+
+    font-size: 9px;
+}
+
+
+/* =========================
+   IMAGEN
+========================= */
+
+.imagen-deportes {
+    width: 100%;
+    height: 100%;
+
+    overflow: hidden;
+
+    background-color: #dddddd;
+}
+
+.imagen-deportes img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+}
+
+
+/* =========================
+   RESPONSIVE TABLET
+========================= */
+
+@media screen and (max-width: 900px) {
+
+    .seccion-superior {
+        grid-template-columns: 1fr;
+    }
+
+    .introduccion {
+        padding-right: 0;
+        margin-bottom: 40px;
+    }
+
+    .servicios {
+        padding-left: 0;
+    }
+
+    .seccion-inferior {
+        grid-template-columns: 1fr;
+    }
+
+    .tarjeta {
+        min-height: 400px;
+    }
+
+    .imagen-deportes {
+        height: 450px;
+    }
+
+}
+
+
+/* =========================
+   RESPONSIVE CELULAR
+========================= */
+
+@media screen and (max-width: 600px) {
+
+    .pagina {
+        padding: 20px;
+    }
+
+    .introduccion h1 {
+        font-size: 28px;
+    }
+
+    .servicios {
+        grid-template-columns: 1fr;
+
+        gap: 30px;
+    }
+
+    .servicio h2 {
+        font-size: 17px;
+    }
+
+    .tarjeta {
+        padding: 28px 22px;
+    }
+
+    .tarjeta h2 {
+        font-size: 24px;
+    }
+
+    .tarjeta p {
+        font-size: 10px;
+    }
+
+    .imagen-deportes {
+        height: 300px;
+    }
+
+}

@@ -1,0 +1,463 @@
+@font-face {
+  font-family: 'Oswald';
+  src: url('fonts/Oswald/Oswald-VariableFont_wght.ttf') format('truetype');
+  font-weight: 200 700;
+  font-style: normal;
+}
+
+body {
+  font-family: 'Oswald', sans-serif;
+  background-color: #C0C0C0;
+  margin: 0;
+  padding: 3rem;
+}
+
+
+/* MENÚ DESPLEGABLE */
+
+.menu {
+  margin: 0 -3rem 0 -3rem;
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+  padding: 0.5rem 3rem;
+  background-color: #090909;
+  border-radius: 0;
+}
+
+.menu__item {
+  position: relative;
+}
+
+.menu__title {
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #fff;
+  padding: 0.3rem 0.5rem;
+  text-transform: uppercase;
+}
+
+.menu__button {
+  font-family: 'Oswald', sans-serif;
+  font-size: 1rem;
+  color: #fff;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.3rem 0.5rem;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.menu__button:hover {
+  color: #C0C0C0;
+}
+
+.menu__dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 10;
+
+  display: flex;
+  flex-direction: column;
+
+  min-width: 180px;
+
+  background-color: #F2F2F2;
+
+  border: 1px solid #00000022;
+  border-radius: 8px;
+
+  opacity: 0;
+  visibility: hidden;
+
+  transform: translateY(-5px);
+
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease,
+    visibility 0.3s ease;
+
+  box-shadow:
+    0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.menu__item:hover .menu__dropdown {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.menu__dropdown a {
+  font-family: 'Oswald', sans-serif;
+  color: #333;
+  text-decoration: none;
+  padding: 0.6rem 1rem;
+  transition: background-color 0.2s ease;
+}
+
+.menu__dropdown a:hover {
+  background-color: #C0C0C0;
+}
+
+.menu__dropdown-group {
+  font-family: 'Oswald', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: #fff;
+  background-color: #090909;
+  padding: 0.4rem 1rem;
+}
+
+
+/* PÁGINAS INTERNAS */
+
+.page {
+  padding: 2rem 3rem;
+}
+
+.page__text {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  text-align: justify;
+  max-width: 800px;
+  margin-bottom: 2rem;
+}
+
+.page__image {
+  width: 100%;
+  max-width: 800px;
+  border-radius: 10px;
+}
+
+.page__link {
+  display: inline-block;
+  margin-top: 1.5rem;
+  padding: 0.7rem 1rem;
+  border: 1px solid #00000055;
+  color: #000;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.page__link:hover {
+  background-color: #D9D9D9;
+}
+
+
+/* INTRO */
+
+.intro {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: #4D4D4D;
+  padding: 1.5rem 3rem 0 3rem;
+  margin: -3rem -3rem 1.5rem -3rem;
+}
+
+.intro__title {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-align: left;
+  color: #fff;
+  margin: 0 0 1.5rem 0;
+}
+
+
+.intro__text {
+  text-align: justify;
+  margin: 0;
+  padding: 1.5rem;
+  color: #fff;
+  background-color: #4D4D4D;
+}
+
+
+/* CUADRÍCULA INTRO */
+
+.intro-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+
+.intro-grid__item {
+  aspect-ratio: 1 / 1;
+  border-radius: 10px;
+}
+
+
+/* SUBTÍTULOS */
+
+.section-subtitle {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 700;
+  text-align: center;
+}
+
+.section-subtitle:first-of-type {
+  margin-top: -1.5rem;
+}
+
+
+/* GALERÍA */
+
+.gallery {
+  position: relative;
+  display: flex;
+  padding: 2rem;
+  overflow: hidden;
+}
+
+
+/* PANEL LATERAL */
+
+.gallery__panel {
+  width: 0;
+  flex: 0 0 0;
+
+  box-sizing: border-box;
+
+  opacity: 0;
+  overflow: hidden;
+
+  padding: 0;
+
+  transition:
+    width 0.4s ease,
+    flex-basis 0.4s ease,
+    opacity 0.4s ease,
+    padding 0.4s ease;
+}
+
+
+.gallery__panel.is-open {
+  width: 300px;
+  flex-basis: 300px;
+
+  opacity: 1;
+
+  padding: 1.5rem;
+}
+
+
+/* TÍTULO */
+
+.gallery__title {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 700;
+
+  margin: 0 0 0.5rem 0;
+}
+
+
+/* TEXTO */
+
+.gallery__text {
+  margin: 0;
+
+  text-align: justify;
+}
+
+
+/* BOTÓN MÁS AQUÍ */
+
+.gallery__link {
+  display: block;
+
+  margin-top: 1.5rem;
+  padding: 0.7rem 1rem;
+
+  border: 1px solid #00000055;
+
+  color: #000;
+
+  text-align: center;
+  text-decoration: none;
+
+  transition: background-color 0.3s ease;
+}
+
+
+.gallery__link:hover {
+  background-color: #D9D9D9;
+}
+
+
+/* GRID */
+
+.gallery__grid {
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  grid-auto-rows: 1fr;
+
+  gap: 1rem;
+
+  flex: 1;
+
+  min-width: 0;
+}
+
+
+/* GRID DE DOS */
+
+.gallery__grid--two {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+
+/* GRID DE TRES */
+
+.gallery__grid--three {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+
+/* CUADROS */
+
+.gallery__item {
+  aspect-ratio: 1 / 1;
+
+  background-color: #D9D9D9;
+
+  border-radius: 10px;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.3s ease,
+    transform 0.8s ease,
+    box-shadow 0.8s ease;
+}
+
+
+.gallery__item:hover {
+  background-color: #C0C0C0;
+}
+
+
+/* SECCIONES DE ENLACES */
+
+.links-section {
+  padding: 1rem 2rem 2rem 2rem;
+}
+
+.links-section__group {
+  margin-bottom: 1.5rem;
+}
+
+.links-section__group-title {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  color: #fff;
+  background-color: #090909;
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  margin: 0 0 0.5rem 0;
+}
+
+.links-section__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.links-section__list li {
+  margin: 0.3rem 0;
+}
+
+.links-section__list a {
+  font-family: 'Oswald', sans-serif;
+  color: #333;
+  text-decoration: none;
+  padding: 0.2rem 0;
+  transition: color 0.2s ease;
+}
+
+.links-section__list a:hover {
+  color: #4D4D4D;
+}
+
+.links-section__list li {
+  margin-bottom: 1rem;
+}
+
+.links-section__desc {
+  font-size: 0.9rem;
+  color: #555;
+  text-align: justify;
+  margin: 0.3rem 0 0 0;
+  max-width: 600px;
+}
+
+
+/* CUADRO ACTIVO */
+
+.gallery__item.is-active {
+  transform: scale(1.15);
+
+  outline: 2px solid #00000055;
+
+  box-shadow:
+    0 8px 20px rgba(0, 0, 0, 0.2);
+
+  z-index: 1;
+}
+
+.has-image-travesia.is-active,
+.has-image-cochamo.is-active,
+.has-image-huinay.is-active {
+  transform: scale(0.95);
+}
+
+.has-image-estela.is-active,
+.has-image-plano.is-active,
+.has-image-horizontes.is-active,
+.has-image-ondas.is-active {
+  transform: scale(0.95);
+}
+
+.has-image {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.has-image-estela {
+  background-image: url('images/Estela en Conversión de Ambiente.jpeg');
+  background-position: center 30%;
+}
+
+.has-image-plano {
+  background-image: url('images/Plano en Quiebre de Acogimiento.jpeg');
+}
+
+.has-image-horizontes {
+  background-image: url('images/Horizontes en Segregación Etérea.jpg');
+}
+
+.has-image-ondas {
+  background-image: url('images/Ondas del Ocaso.png');
+}
+
+.has-image-travesia {
+  background-image: url('images/travesia-valle-del-pupio/travesia-valledelpupio.jpg');
+}
+
+.has-image-cochamo {
+  background-image: url('images/travesia-cochamo/Travesia-cochamo.jpeg');
+}
+
+.has-image-huinay {
+  background-image: url('images/travesia-huinay/Travesia huinay.jpg');
+}
